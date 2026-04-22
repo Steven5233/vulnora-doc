@@ -1,2 +1,2 @@
 official page for vulnora documentation
-all thought, guide and update we shared here 
+all thought, guide and updates will be shared here
