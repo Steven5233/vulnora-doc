@@ -139,6 +139,7 @@
                 <a href="#features">Features</a>
                 <a href="#install">Install</a>
                 <a href="#logic">Logic Engine</a>
+                <a href="#blog">Blog</a>
                 <a href="https://github.com/Steven5233/vulnora" target="_blank">GitHub</a>
             </nav>
         </div>
@@ -211,6 +212,50 @@ docker compose up --build -d</pre>
             </div>
         </section>
 
+        <section id="blog">
+            <h2>From the Creator</h2>
+            <div class="card" style="line-height: 1.8; border-color: rgba(56, 189, 248, 0.3);">
+                <h3 style="font-size: 1.7rem; color: white; text-transform: none; margin-bottom: 0.5rem;">
+                    Bug Bounty Hunting for Beginners: How I Built Vulnora to Catch What Most Tools Miss
+                </h3>
+                <p style="font-size: 0.9rem; color: var(--accent); margin-bottom: 2rem; font-family: 'JetBrains Mono';">
+                    Author: séç gúy | Cybersecurity Researcher
+                </p>
+
+                <p>Hey, I'm <strong>séç gúy</strong> — a penetration tester who's spent years hunting bugs on live programs. When I started out, bug bounty hunting felt overwhelming. You hear about massive payouts, but nobody tells you the real struggle: <strong>most tools are blind to the bugs that actually pay.</strong></p>
+
+                <p>That's exactly why I built <strong>Vulnora</strong>.</p>
+
+                <p>I got tired of scanners that only test from one user account and completely miss IDOR, BOLA, and business logic flaws. Those are the vulnerabilities that separate beginners from hunters landing real bounties. So I created an open-source hybrid scanner that combines automation with real manual testing power, specifically built for multi-account, cross-user testing.</p>
+
+                <h3 style="margin-top: 2.5rem; color: var(--accent2);">What Vulnora actually does in real life</h3>
+                <p>Vulnora runs automated scans using Nuclei and OWASP ZAP, then switches to deep logic flaw detection with my custom <code>LogicFlawScanner</code> and <code>IDORForge</code> modules. It lets you test with multiple accounts at once — swapping IDs across users, testing privilege escalation, and catching authorization bypasses that single-account tools never see.</p>
+
+                <p>In practice, you add your target, feed it cookies or JWTs from different accounts, and it runs live HTTP requests to detect <strong>Broken Object Level Authorization (BOLA), mass assignment, and GraphQL mutations</strong> — stuff that pays out because it's high impact.</p>
+
+                <p>It also gives you a full ZAP Proxy and Repeater right inside the UI. Set your browser to <code>localhost:8090</code>, browse the target, and replay requests with breakpoints and session hijacking — just like Burp Suite, but integrated with your automated findings.</p>
+
+                <h3 style="margin-top: 2.5rem; color: var(--accent2);">How beginners can actually get started</h3>
+                <p>Don't jump straight into live programs. Here's the exact path I wish someone gave me:</p>
+                
+                <ul style="margin-bottom: 1.5rem; color: var(--text);">
+                    <li><strong>Learn the fundamentals:</strong> Study the OWASP Top 10. Read <em>"Real-World Bug Hunting"</em> by Peter Yaworski.</li>
+                    <li><strong>Practice:</strong> Use free labs like PortSwigger Academy, TryHackMe, and HackTheBox.</li>
+                    <li><strong>Set up Vulnora:</strong> The Docker version takes two minutes. Clone the repo and start practicing on test targets like DVWA or Juice Shop.</li>
+                    <li><strong>Consistency:</strong> Start with VDP programs to practice without pressure. Focus on one bug type at a time.</li>
+                </ul>
+
+                <p>When you're ready for paid programs, read the rules twice, respect scope, and always write clear reports with steps to reproduce. Platforms like HackerOne and Bugcrowd reward good hunters, not just good hackers.</p>
+
+                <div style="background: var(--code); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--accent); margin: 2rem 0;">
+                    <p style="margin: 0; color: #fff;"><strong>Final tip:</strong> Bug bounty hunting is 80% persistence and 20% technical skill. The bugs are there — most hunters just aren't looking in the right places. Tools like Vulnora help you look smarter.</p>
+                </div>
+
+                <p style="text-align: center; margin-top: 3rem;">
+                    <a href="https://github.com/Steven5233/vulnora" class="btn">Explore the Repo</a>
+                </p>
+            </div>
+        </section>
         <section style="text-align: center; border-top: 1px solid var(--border); padding-top: 4rem;">
             <h3 style="color: #ef4444;">Legal & Ethical Notice</h3>
             <p style="color: var(--dim); max-width: 620px; margin: 0 auto;">
@@ -221,7 +266,7 @@ docker compose up --build -d</pre>
     </div>
 
     <footer>
-        <p>© 2026 Vulnora • Licensed under AGPL-3.0</p>
+        <p>© 2026 Vulnora • Licensed under AGPL-3.0 • Built by séç gúy</p>
     </footer>
 
 </body>
